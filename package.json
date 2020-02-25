@@ -1,5 +1,5 @@
 {
-    "name": "com.enginerartist.gameobject-attributes",
+    "name": "com.engineartist.gameobject-attributes",
     "version": "0.1.0",
     "displayName": "GameObject Attributes",
     "description": "This package provides a Component for Unity GameObjects that allows users to add arbitrary fields to them in UnityEditor.",
