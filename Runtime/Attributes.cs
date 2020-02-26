@@ -4,6 +4,9 @@ using UnityEngine;
 using System;
 
 
+namespace EngineArtist {
+
+
 public enum AttributeType {
     None,
     Int,
@@ -74,6 +77,237 @@ public interface IAttribute {
     UnityEngine.Object Object {get; set;}
     GameObject GameObject {get; set;}
     Component Component {get; set;}
+}
+
+
+[Serializable]
+public class AttributeInt: IAttribute {
+    public int _value;
+
+    public AttributeType Type {get => AttributeType.Int;}
+    public object Value {get => (object)_value; set => _value = (int)value;}
+    public int Int {get => _value; set => _value = value;}
+    public float Float {get => (float)_value; set => _value = (int)value;}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeFloat: IAttribute {
+    public float _value;
+
+    public AttributeType Type {get => AttributeType.Float;}
+    public object Value {get => (object)_value; set => _value = (float)value;}
+    public int Int {get => (int)_value; set => _value = (float)value;}
+    public float Float {get => _value; set => _value = value;}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeString: IAttribute {
+    public string _value;
+
+    public AttributeType Type {get => AttributeType.String;}
+    public object Value {get => (object)_value; set => _value = (string)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => _value; set => _value = value;}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeVector2: IAttribute {
+    public Vector2 _value;
+
+    public AttributeType Type {get => AttributeType.Vector2;}
+    public object Value {get => (object)_value; set => _value = (Vector2)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => _value; set => _value = value;}
+    public Vector3 Vector3 {get => _value; set => _value = value;}
+    public Vector4 Vector4 {get => _value; set => _value = value;}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeVector3: IAttribute {
+    public Vector3 _value;
+
+    public AttributeType Type {get => AttributeType.Vector3;}
+    public object Value {get => (object)_value; set => _value = (Vector3)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => _value; set => _value = value;}
+    public Vector3 Vector3 {get => _value; set => _value = value;}
+    public Vector4 Vector4 {get => _value; set => _value = value;}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeVector4: IAttribute {
+    public Vector4 _value;
+
+    public AttributeType Type {get => AttributeType.Vector4;}
+    public object Value {get => (object)_value; set => _value = (Vector4)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => _value; set => _value = value;}
+    public Vector3 Vector3 {get => _value; set => _value = value;}
+    public Vector4 Vector4 {get => _value; set => _value = value;}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeColor: IAttribute {
+    public Color _value;
+
+    public AttributeType Type {get => AttributeType.Color;}
+    public object Value {get => (object)_value; set => _value = (Color)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => _value; set => _value = value;}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeRect: IAttribute {
+    public Rect _value;
+
+    public AttributeType Type {get => AttributeType.Rect;}
+    public object Value {get => (object)_value; set => _value = (Rect)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => _value; set => _value = value;}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => null; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeObject: IAttribute {
+    public UnityEngine.Object _value;
+
+    public AttributeType Type {get => AttributeType.Object;}
+    public object Value {get => (object)_value; set => _value = (UnityEngine.Object)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => _value; set => _value = value;}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeGameObject: IAttribute {
+    public GameObject _value;
+
+    public AttributeType Type {get => AttributeType.GameObject;}
+    public object Value {get => (object)_value; set => _value = (GameObject)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => _value; set {}}
+    public GameObject GameObject {get => _value; set => _value = value;}
+    public Component Component {get => null; set {}}
+}
+
+
+[Serializable]
+public class AttributeComponent: IAttribute {
+    public Component _value;
+
+    public AttributeType Type {get => AttributeType.Component;}
+    public object Value {get => (object)_value; set => _value = (Component)value;}
+    public int Int {get => int.MinValue; set {}}
+    public float Float {get => float.NaN; set {}}
+    public string String {get => null; set {}}
+    public Vector2 Vector2 {get => default(Vector2); set {}}
+    public Vector3 Vector3 {get => default(Vector3); set {}}
+    public Vector4 Vector4 {get => default(Vector4); set {}}
+    public Color Color {get => default(Color); set {}}
+    public Rect Rect {get => default(Rect); set {}}
+    public Matrix4x4 Matrix4x4 {get => default(Matrix4x4); set {}}
+    public UnityEngine.Object Object {get => _value; set {}}
+    public GameObject GameObject {get => null; set {}}
+    public Component Component {get => _value; set => _value = value;}
 }
 
 
@@ -308,4 +542,7 @@ public class AttributeDrawer: PropertyDrawer {
         }
         EditorGUI.EndProperty();
     }
+}
+
+
 }
